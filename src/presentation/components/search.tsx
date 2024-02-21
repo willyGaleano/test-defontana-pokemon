@@ -1,5 +1,5 @@
-import { IconSearch } from '@tabler/icons-react';
-import { ChangeEvent, FC, useEffect, useState } from 'react';
+import { useListPokemonSearch } from '@application/hooks/useListPokemonSearch';
+import { FC } from 'react';
 import { ReactSearchAutocomplete } from 'react-search-autocomplete';
 
 interface Props {
@@ -7,76 +7,25 @@ interface Props {
 }
 
 const Search: FC<Props> = ({ handleChangePokemonName }) => {
-	const items = [
-		{
-			id: 0,
-			name: 'Cobol',
-		},
-		{
-			id: 1,
-			name: 'JavaScript',
-		},
-		{
-			id: 2,
-			name: 'Basic',
-		},
-		{
-			id: 3,
-			name: 'PHP',
-		},
-		{
-			id: 4,
-			name: 'Java',
-		},
-	];
-
-	const handleOnSearch = (string: string, results: any) => {
-		// onSearch will have as the first callback parameter
-		// the string searched and for the second the results.
-		console.log({
-			msg: 'handleOnSearch',
-			string,
-			results,
-		});
-	};
-
-	const handleOnHover = (result: any) => {
-		// the item hovered
-		console.log({
-			msg: 'handleOnHover',
-			result,
-		});
-	};
+	const { pokemonListSearch } = useListPokemonSearch();
 
 	const handleOnSelect = (item: any) => {
-		// the item selected
-		console.log({
-			msg: 'handleOnSelect',
-			item,
-		});
-	};
-
-	const handleOnFocus = () => {
-		console.log({
-			msg: 'handleOnFocus',
-		});
+		handleChangePokemonName(item.name, item);
 	};
 
 	const formatResult = (item: any) => {
 		return (
-			<div className='sticky fixed'>
+			<div className='sticky'>
 				<span className='block'>{item.name}</span>
 			</div>
 		);
 	};
 	return (
-		<div>
+		<div className='relative z-50'>
 			<ReactSearchAutocomplete
-				items={items}
-				onSearch={handleOnSearch}
-				onHover={handleOnHover}
+				items={pokemonListSearch}
+				onSearch={handleChangePokemonName}
 				onSelect={handleOnSelect}
-				onFocus={handleOnFocus}
 				autoFocus
 				formatResult={formatResult}
 			/>

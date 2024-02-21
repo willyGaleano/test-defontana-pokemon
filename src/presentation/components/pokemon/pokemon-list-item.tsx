@@ -18,11 +18,11 @@ const PokemonListItem: FC<Props> = ({ pokemonURL, handleShowPokemon }) => {
 
 	return (
 		<div
-			className=' sticky bg-white rounded-xl shadow-md overflow-hidden transform 
+			className='bg-white rounded-xl shadow-md overflow-hidden transform 
     transition duration-500 hover:scale-105'
 			onClick={async () => await handleShowPokemon(pokemon)}
 		>
-			<div className='relative'>
+			<div>
 				<img
 					className=' w-full h-48 object-contain'
 					src={pokemon?.sprites?.other['official-artwork'].front_default}

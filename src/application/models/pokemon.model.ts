@@ -10,6 +10,11 @@ export interface PokemonResult {
 	url: string;
 }
 
+export interface PokemonListSearch {
+	id: number;
+	name: string;
+}
+
 export interface PokemonDetailResponse {
 	id: number;
 	name: string;

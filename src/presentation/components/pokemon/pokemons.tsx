@@ -1,4 +1,4 @@
-import { ChangeEvent, useState } from 'react';
+import { useState } from 'react';
 import { usePokemon } from '@application/hooks/usePokemon';
 import PokemonList from './pokemon-list';
 import Search from '../search';

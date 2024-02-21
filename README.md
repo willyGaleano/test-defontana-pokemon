@@ -18,13 +18,13 @@
 
 ## Desarrollo del challenge 🚀
 
-![folder-postman](/etc/images/poke1.PNG)
+![home](/etc/images/poke1.PNG)
 
-![folder-postman](/etc/images/poke2.PNG)
+![search](/etc/images/poke2.PNG)
 
-![folder-postman](/etc/images/poke3.PNG)
+![detail-responsive](/etc/images/poke3.PNG)
 
-![folder-postman](/etc/images/poke4.PNG)
+![responsive](/etc/images/poke4.PNG)
 
 ## Construido con 🛠️
 
